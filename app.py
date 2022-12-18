@@ -90,4 +90,4 @@ class ContohResource(Resource):
 api.add_resource(ContohResource, "/api", methods=["GET", "POST"])
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5005)
+    app.run(debug=True, host="0.0.0.0", port=5005)
