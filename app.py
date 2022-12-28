@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'sbp.ridlwany.com'
 app.config['MYSQL_USER'] = 'sbp'
 app.config['MYSQL_PASSWORD'] = 'sbp'
-app.config['MYSQL_DB'] = 'sbptestdb'
+app.config['MYSQL_DB'] = 'sbpdb'
 
 # Inisiasi object flask_restful
 api = Api(app)
@@ -42,7 +42,7 @@ class ContohResource(Resource):
         features = [item[0] for item in feature]
 
         train_data_m = pd.DataFrame(data=datasets, columns=features)
-        id3 = ID3(train_data_m, 'Play Tennis')
+        id3 = ID3(train_data_m, 'idaman')
         tree = id3.decision_tree()
 
         return tree
@@ -64,7 +64,7 @@ class ContohResource(Resource):
         features = [item[0] for item in feature]
 
         train_data_m = pd.DataFrame(data=datasets, columns=features)
-        id3 = ID3(train_data_m, 'Play Tennis')
+        id3 = ID3(train_data_m, 'idaman')
         tree = id3.decision_tree()
 
         item = json.loads(message)
